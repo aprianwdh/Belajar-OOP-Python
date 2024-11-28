@@ -1,6 +1,13 @@
-arry = [1,2,3,4]
+class Mobil:
+    def __init__(self,nama,kelamin):
+        self.nama = nama
+        self.kelamin = kelamin
 
-arry = arry[1]
-print(arry)
+class MObilIndo(Mobil):
+    def __init__(self,nama, kelamin,terbang):
+        super().__init__(nama, kelamin)
+        self.terbang = terbang
 
-print(arry[3])
+Avanza = MObilIndo('kak','asa',True)
+
+print(Avanza.__dict__)

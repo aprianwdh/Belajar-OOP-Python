@@ -16,15 +16,19 @@ class Hero:
         print(F"Damage yang diterima = {damage_diterima} ")
         self.health -= damage_diterima
         print(f"sisa health = {self.health}")
+
+    def heal(self,healAmount):
+        self.health += healAmount
+        print(f"{self.name} mengheal dirinya sendiri sebesar {healAmount}")
+        print(f'health {self.name} sekarang adalah = {self.health}')
     
 
 balmon = Hero("Balmon",100,10,10)
 natan = Hero("Natan",80,15,9)
 
-while True:
-    balmon.menyerang(natan)
-    print("\n")
-    natan.menyerang(balmon)
 
-    if natan.health <= 0 or balmon.health <= 0:
-        break
+balmon.menyerang(natan)
+print("\n")
+natan.menyerang(balmon)
+print("\n")
+natan.heal(10)
